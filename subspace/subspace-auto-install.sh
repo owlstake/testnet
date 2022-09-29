@@ -67,10 +67,10 @@ then
 echo "Number of CPU core is $CPUCORE"
 echo "Number of reward address is $arrlength"
 echo "Result: equal --> Starting to install the node"
-NODEQUANTITY=$CPUCORE
-echo "We will install $NODEQUANTITY nodes"
 ###############################
 # Start install function here
+NODEQUANTITY=$CPUCORE
+echo "We will install $NODEQUANTITY nodes"
 ADDPORTARRAY
 rm -rf subspace-docker-folder
 mkdir subspace-docker-folder
@@ -82,10 +82,10 @@ then
 echo "Number of CPU core is $CPUCORE"
 echo "Number of reward address is $arrlength"
 echo "Result: CPU core < reward address --> Starting to install the node based on number of CPU core"
-NODEQUANTITY=$CPUCORE
-echo "We will install $NODEQUANTITY nodes"
 ###############################
 # Start install function here
+NODEQUANTITY=$CPUCORE
+echo "We will install $NODEQUANTITY nodes"
 ADDPORTARRAY
 rm -rf subspace-docker-folder
 mkdir subspace-docker-folder
@@ -109,10 +109,10 @@ case $yn in
 esac
 done
 ###############################
+# Start install function here
+###############################
 NODEQUANTITY=$arrlength
 echo "We will install $NODEQUANTITY nodes"
-###############################
-# Start install function here
 ADDPORTARRAY
 rm -rf subspace-docker-folder
 mkdir subspace-docker-folder
