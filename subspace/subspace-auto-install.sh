@@ -50,8 +50,8 @@ EOF
 PORTARRAY[0]=$((PORTARRAY[0]+1))
 PORTARRAY[1]=$((PORTARRAY[1]+1))
 PORTARRAY[2]=$((PORTARRAY[2]+1))
-#docker compose up -d
-#sleep 10
+docker compose up -d
+sleep 10
 }
 ##########################
 function start-install {
