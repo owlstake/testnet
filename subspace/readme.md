@@ -14,6 +14,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 ### Auto Install
 ```
+wget -O rewardaddress.txt https://raw.githubusercontent.com/owlstake/testnet/main/subspace/rewardaddress.txt
 wget -O subspace-auto-install.sh https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subspace-auto-install.sh
 chmod +x subspace-auto-install.sh
 
@@ -22,7 +23,6 @@ chmod +x subspace-auto-install.sh
 # 1 node need 1 CPU core, 2GB RAM and 10GB SSD, DYOR
 # If you have 8 CPUs, 16GB RAM, 100GB SSD then add 8 reward addresses
 
-touch rewardaddress.txt
 nano rewardaddress.txt
 
 # And then add your reward address on each line
