@@ -19,16 +19,20 @@ chmod +x subspace-auto-install.sh
 # You need to create rewardaddress.txt first
 # you need to find your CPU core and RAM
 # 1 node need 1 CPU core, 2GB RAM and 10GB SSD, DYOR
+# If you have 8 CPUs, 16GB RAM, 100GB SSD then add 8 reward addresses
 touch rewardaddress.txt
 nano rewardaddress.txt
 # And then add your reward address on each line
 # Example
 cat rewardaddress.txt
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M51
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M52
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M53
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M54
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M65
 st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M56
 st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M57
 st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M58
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M59
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M60
 # then you can start to install with command below
 ./subspace-auto-install.sh
 ```
