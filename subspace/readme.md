@@ -12,6 +12,27 @@ curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compo
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
+### Auto Install
+```
+wget -O subspace-auto-install.sh https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subspace-auto-install.sh
+chmod +x subspace-auto-install.sh
+# You need to create rewardaddress.txt first
+touch rewardaddress.txt
+nano rewardaddress.txt
+# And then add your reward address on each line
+# Example
+cat rewardaddress.txt
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M56
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M57
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M58
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M59
+st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M60
+# then you can start to install with command below
+./subspace-auto-install.sh
+```
+
+
+### Manual
 ###### Create folder and copy 2 file docker-compose.yaml + .env inside each folder
 ```
 cd $HOME
