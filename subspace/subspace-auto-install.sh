@@ -121,3 +121,5 @@ start-install
 ###############################
 #####
 fi
+echo "Result here"
+docker ps
