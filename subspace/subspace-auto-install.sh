@@ -67,6 +67,8 @@ then
 echo "Number of CPU core is $CPUCORE"
 echo "Number of reward address is $arrlength"
 echo "Result: equal --> Starting to install the node"
+NODEQUANTITY=$CPUCORE
+echo "We will install $NODEQUANTITY nodes"
 ###############################
 # Start install function here
 ADDPORTARRAY
@@ -75,8 +77,6 @@ mkdir subspace-docker-folder
 cd subspace-docker-folder
 start-install
 ###############################
-NODEQUANTITY=$CPUCORE
-echo "We will install $NODEQUANTITY nodes"
 elif [[ $CPUCORE -lt $arrlength ]]
 then
 echo "Number of CPU core is $CPUCORE"
