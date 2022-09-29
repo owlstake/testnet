@@ -26,8 +26,8 @@ PORTARRAY=()
 #Ask port ranges array
 function ADDPORTARRAY {
 PORTARRAY+=(4000)
-PORTARRAY+=(4008)
-PORTARRAY+=(4016)
+PORTARRAY+=(5000)
+PORTARRAY+=(6000)
 }
 ##########################
 function install {
