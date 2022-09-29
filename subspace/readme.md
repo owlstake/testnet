@@ -41,6 +41,8 @@ st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M58
 # then you can start to install with command below
 
 ./subspace-auto-install.sh
+
+# This script use port ranges 4000 5000 6000, if you want to change the range, open script and edit it
 ```
 
 
