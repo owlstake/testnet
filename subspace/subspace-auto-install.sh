@@ -10,8 +10,10 @@ sudo sh get-docker.sh
 curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
 ########################
-#install subkey to generate wallets
+#install subkey to generate subsapce wallets
+cd $HOME
 sudo apt install -y protobuf-compiler
 
 #Rust and Cargo
@@ -28,9 +30,9 @@ sleep 1
 #generate subsapce wallets
 echo "Number of wallets: "
 read noofwallet
-x=1
 
-#export all information of wallets (phrase, public address,...) to rewardaddress-phrases.txt file
+#generate wallets and export all information of wallets (phrase, public address,...) to rewardaddress-phrases.txt file stored at $HOME
+x=1
 while [ $x -le $noofwallet ]
 do
   echo "account $x:"
@@ -39,7 +41,40 @@ do
   x=$(( $x + 1 ))
 done > rewardaddress-phrases.txt
 
-#copy public address from rewardaddress-phrases.txt to rewardaddress.txt for next step
+echo "All wallets stored at $HOME/rewardaddress-phrases.txt. Be sure to backup!!"
+
+sleep 5
+
+#file rewardaddress-phrases.txt be like this:
+
+# account 1:
+# Secret phrase:       vote toss warfare decorate chimney spend current debris emotion split turkey loop
+#   Network ID:        subspace_testnet
+#   Secret seed:       0x51498e59cac4e065165db7bd6712de77f25e7ed6fc7cef18bc0f7961125c8683
+#   Public key (hex):  0x06bb263b7aef565701bf2a04a4217d3c552f9c676a1615d0f7dc4c889a61393c
+#   Account ID:        0x06bb263b7aef565701bf2a04a4217d3c552f9c676a1615d0f7dc4c889a61393c
+#   Public key (SS58): st6R1pLS5hjKbNsowAGHeaxdUpqwcF4jhTp6NSH9b6G66986q
+#   SS58 Address:      st6R1pLS5hjKbNsowAGHeaxdUpqwcF4jhTp6NSH9b6G66986q
+# account 2:
+# Secret phrase:       remind obvious cruel rain pelican deny breeze junk coin fiction drop liberty
+#   Network ID:        subspace_testnet
+#   Secret seed:       0xb89aeb684bd08340f5c056076f30d93ee3da46ee31476f4a444f060156b1e29e
+#   Public key (hex):  0x388d6b42bbfce8b8538114be43502888c21c40812bd7492851414cc28c07e56e
+#   Account ID:        0x388d6b42bbfce8b8538114be43502888c21c40812bd7492851414cc28c07e56e
+#   Public key (SS58): st7YLdHXbyYSuEHo7uewep8WCCyHQyokF8HpeqF9Qpb9ynoi9
+#   SS58 Address:      st7YLdHXbyYSuEHo7uewep8WCCyHQyokF8HpeqF9Qpb9ynoi9
+# account 3:
+# Secret phrase:       embody movie anxiety labor crane speak excess face tongue adult mixed fresh
+#   Network ID:        subspace_testnet
+#   Secret seed:       0xb98edda590c01eb0c349d1402c959d508e3fa090c2c66dcc61a19e5787eb192a
+#   Public key (hex):  0xe8b273a43fcfb8ec5ccb8ecf8422c69bd3acef472039078b9f7f78adc3733b4a
+#   Account ID:        0xe8b273a43fcfb8ec5ccb8ecf8422c69bd3acef472039078b9f7f78adc3733b4a
+#   Public key (SS58): stBXJ49mnYLzayGWjDyejSPuRp2vS4z9Wai8hmtfaaD8SivdH
+#   SS58 Address:      stBXJ49mnYLzayGWjDyejSPuRp2vS4z9Wai8hmtfaaD8SivdH
+
+########################
+
+#copy public address from rewardaddress-phrases.txt to rewardaddress.txt for next steps
 x=1
 while [ $x -le $noofwallet ]
 do
@@ -49,6 +84,14 @@ do
   x=$(( $x + 1 ))
 done > rewardaddress.txt
 
+#file rewardaddress.txt be like this:
+
+#    SS58 Address:      st6R1pLS5hjKbNsowAGHeaxdUpqwcF4jhTp6NSH9b6G66986q
+#    SS58 Address:      st7YLdHXbyYSuEHo7uewep8WCCyHQyokF8HpeqF9Qpb9ynoi9
+#    SS58 Address:      stBXJ49mnYLzayGWjDyejSPuRp2vS4z9Wai8hmtfaaD8SivdH
+
+########################
+
 #replace all the things but public adress in rewardaddress.txt file
 v1="SS58 Address:"
 v2=" "
@@ -56,7 +99,17 @@ v3=""
 sed -i "s/$v1/$v3/" rewardaddress.txt
 sed -i "s/$v2/$v3/" rewardaddress.txt
 
+#file rewardaddress.txt now like this:
+
+#st6R1pLS5hjKbNsowAGHeaxdUpqwcF4jhTp6NSH9b6G66986q
+#st7YLdHXbyYSuEHo7uewep8WCCyHQyokF8HpeqF9Qpb9ynoi9
+#stBXJ49mnYLzayGWjDyejSPuRp2vS4z9Wai8hmtfaaD8SivdH
+
+# chân tay vl :v
+
+sleep 1
 ########################
+
 counter=0
 CPUCORE=$(nproc)
 readarray -t arrrewardaddress <rewardaddress.txt 2> /dev/null
