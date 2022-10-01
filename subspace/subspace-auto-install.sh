@@ -120,7 +120,6 @@ sed -i "s/$v2/$v3/" rewardaddress.txt
 #st7YLdHXbyYSuEHo7uewep8WCCyHQyokF8HpeqF9Qpb9ynoi9
 #stBXJ49mnYLzayGWjDyejSPuRp2vS4z9Wai8hmtfaaD8SivdH
 
-# chân tay vl :v
 
 sleep 1
 ########################
@@ -143,6 +142,7 @@ PORTARRAY+=(4000)
 PORTARRAY+=(5000)
 PORTARRAY+=(6000)
 }
+PLOTSIZE="70G"
 ##########################
 function install {
 cd $HOME/subspace-docker-folder
@@ -158,7 +158,7 @@ PORT1=${PORTARRAY[0]}
 PORT2=${PORTARRAY[1]}
 PORT3=${PORTARRAY[2]}
 REWARDADDRESS=${arrrewardaddress[$counter]}
-PLOTSIZE=10G
+PLOTSIZE=$PLOTSIZE
 EOF
 ############
 PORTARRAY[0]=$((PORTARRAY[0]+1))
