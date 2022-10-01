@@ -13,18 +13,25 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 ########################
 #install subkey to generate subsapce wallets
-cd $HOME
-sudo apt install -y protobuf-compiler
+if [[ $(subkey --version) ]]; then
+    echo "Subkey installed!"
+    # command
+  else
+   cd $HOME
+   sudo apt install -y protobuf-compiler
 
-#Rust and Cargo
-curl https://sh.rustup.rs -sSf | sh
+   #Rust and Cargo
+   curl https://sh.rustup.rs -sSf | sh
 
-#install the dependencies and Subkey
-#https://support.polkadot.network/support/solutions/articles/65000180519-how-to-create-an-account-in-subkey
-curl https://getsubstrate.io -sSf | bash -s -- --fast
-cargo install --force subkey --git https://github.com/paritytech/substrate
+   #install the dependencies and Subkey
+   #https://support.polkadot.network/support/solutions/articles/65000180519-how-to-create-an-account-in-subkey
+   curl https://getsubstrate.io -sSf | bash -s -- --fast
+   cargo install --force subkey --git https://github.com/paritytech/substrate
 
-sleep 1
+   sleep 1 
+
+fi
+
 
 ########################
 #generate subsapce wallets
