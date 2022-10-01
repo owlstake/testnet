@@ -25,7 +25,6 @@ if [[ $(subkey --version) ]]; then
     echo "Subkey installed!"
     # command
   else
-   cd $HOME
    sudo apt install -y protobuf-compiler
 
    #Rust and Cargo
@@ -43,6 +42,7 @@ fi
 
 ########################
 #generate subsapce wallets
+cd $HOME
 echo "Number of wallets: "
 read noofwallet
 
