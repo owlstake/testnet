@@ -11,6 +11,52 @@ curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compo
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ########################
+#install subkey to generate wallets
+sudo apt install -y protobuf-compiler
+
+#Rust and Cargo
+curl https://sh.rustup.rs -sSf | sh
+
+#install the dependencies and Subkey
+#https://support.polkadot.network/support/solutions/articles/65000180519-how-to-create-an-account-in-subkey
+curl https://getsubstrate.io -sSf | bash -s -- --fast
+cargo install --force subkey --git https://github.com/paritytech/substrate
+
+sleep 1
+
+########################
+#generate subsapce wallets
+echo "Number of wallets: "
+read noofwallet
+x=1
+
+#export all information of wallets (phrase, public address,...) to rewardaddress-phrases.txt file
+while [ $x -le $noofwallet ]
+do
+  echo "account $x:"
+  subkey generate -n subspace_testnet
+  #echo -e "\n"
+  x=$(( $x + 1 ))
+done > rewardaddress-phrases.txt
+
+#copy public address from rewardaddress-phrases.txt to rewardaddress.txt for next step
+x=1
+while [ $x -le $noofwallet ]
+do
+  #echo "account $x:"
+  echo $(sed $((8*$x))'!d' rewardaddress-phrases.txt)
+  #echo -e "\n"
+  x=$(( $x + 1 ))
+done > rewardaddress.txt
+
+#replace all the things but public adress in rewardaddress.txt file
+v1="SS58 Address:"
+v2=" "
+v3=""
+sed -i "s/$v1/$v3/" rewardaddress.txt
+sed -i "s/$v2/$v3/" rewardaddress.txt
+
+########################
 counter=0
 CPUCORE=$(nproc)
 readarray -t arrrewardaddress <rewardaddress.txt 2> /dev/null
