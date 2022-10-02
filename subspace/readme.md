@@ -96,3 +96,7 @@ nano .env
 
 docker compose up -d
 ```
+
+```
+grep 'SS58 Address:' backupkey.txt | sed 's/^.*: //' | sed -r 's/\s+//g'
+```
