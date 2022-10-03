@@ -12,6 +12,23 @@ curl -SL https://github.com/docker/compose/releases/download/v2.5.0/docker-compo
 sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
+### Create wallet by command in linux
+```
+wget -O subkey https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subkey
+chmox +x subkey
+mv subkey /usr/bin/
+rm -rf $HOME/rewardaddress.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+subkey generate -n subspace_testnet >> $HOME/backupkey.txt
+grep 'SS58 Address:' $HOME/backupkey.txt | sed 's/^.*: //' | sed -r 's/\s+//g' > $HOME/rewardaddress.txt
+```
+
 ### Auto Install
 ```
 wget -O rewardaddress.txt https://raw.githubusercontent.com/owlstake/testnet/main/subspace/rewardaddress.txt
