@@ -17,7 +17,7 @@ fi
 FILE1=$HOME/backupkey.txt
 FILE2=$HOME/rewardaddress.txt
 if test -f "$FILE1"; then
-    echo "$FILE exists."
+    echo "$FILE1 exists."
     mv $FILE1 $FILE1.$(date +'%m-%d-%Y-%H-%M-%S')
     echo "Renamed the old backupkey file"
 fi
