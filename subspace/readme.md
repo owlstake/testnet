@@ -21,32 +21,10 @@ chmod +x create-subspace-wallet.sh
 
 ### Auto Install
 ```
-wget -O rewardaddress.txt https://raw.githubusercontent.com/owlstake/testnet/main/subspace/rewardaddress.txt
+# You need to create the rewardaddress first, read above, if your PC have 8 cores then fill with 8 to create 8 addresses
+# 1 node need 1 CPU core, 2GB RAM and 10GB SSD, DYOR
 wget -O subspace-auto-install.sh https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subspace-auto-install.sh
 chmod +x subspace-auto-install.sh
-
-# You need to create rewardaddress.txt first
-# you need to find your CPU core and RAM
-# 1 node need 1 CPU core, 2GB RAM and 10GB SSD, DYOR
-# If you have 8 CPUs, 16GB RAM, 100GB SSD then add 8 reward addresses
-
-nano rewardaddress.txt
-
-# And then add your reward address on each line
-
-# Example
-cat rewardaddress.txt
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M51
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M52
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M53
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M54
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M65
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M56
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M57
-st8xB6NyihB8N5becPpB4YiXXoASJgqPKedXXMHKwFPev4M58
-
-# then you can start to install with command below
-
 ./subspace-auto-install.sh
 
 # This script use port ranges 4000 5000 6000, if you want to change the range, open script and edit it
