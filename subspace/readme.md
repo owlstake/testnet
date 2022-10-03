@@ -23,6 +23,7 @@ chmod +x create-subspace-wallet.sh
 ```
 # You need to create the rewardaddress first, read above, if your PC have 8 cores then fill with 8 to create 8 addresses
 # 1 node need 1 CPU core, 2GB RAM and 10GB SSD, DYOR
+
 wget -O subspace-auto-install.sh https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subspace-auto-install.sh
 chmod +x subspace-auto-install.sh
 ./subspace-auto-install.sh
