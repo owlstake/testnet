@@ -17,7 +17,6 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 wget -O subkey https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subkey
 chmox +x subkey
 mv subkey /usr/bin/
-rm -rf $HOME/rewardaddress.txt
 subkey generate -n subspace_testnet >> $HOME/backupkey.txt
 subkey generate -n subspace_testnet >> $HOME/backupkey.txt
 subkey generate -n subspace_testnet >> $HOME/backupkey.txt
