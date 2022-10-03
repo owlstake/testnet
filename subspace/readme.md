@@ -14,19 +14,9 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 ### Create wallet by command in linux
 ```
-wget -O subkey https://raw.githubusercontent.com/owlstake/testnet/main/subspace/subkey
-chmod +x subkey
-mv subkey /usr/bin/
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-subkey generate -n subspace_testnet >> $HOME/backupkey.txt
-grep 'SS58 Address:' $HOME/backupkey.txt | sed 's/^.*: //' | sed -r 's/\s+//g' >> $HOME/rewardaddress.txt
-cat $HOME/rewardaddress.txt
+wget -O create-subspace-wallet.sh https://raw.githubusercontent.com/owlstake/testnet/main/subspace/create-subspace-wallet.sh
+chmod +x create-subspace-wallet.sh
+./create-subspace-wallet.sh
 ```
 
 ### Auto Install
