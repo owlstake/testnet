@@ -26,6 +26,7 @@ subkey generate -n subspace_testnet >> $HOME/backupkey.txt
 subkey generate -n subspace_testnet >> $HOME/backupkey.txt
 subkey generate -n subspace_testnet >> $HOME/backupkey.txt
 grep 'SS58 Address:' $HOME/backupkey.txt | sed 's/^.*: //' | sed -r 's/\s+//g' >> $HOME/rewardaddress.txt
+cat $HOME/rewardaddress.txt
 ```
 
 ### Auto Install
