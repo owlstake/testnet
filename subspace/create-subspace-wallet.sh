@@ -28,6 +28,7 @@ if test -f "$FILE2"; then
 fi
 ##################################
 #### Ask the number of reward address
+echo "If your CPU have 8 cores then fill this value with 8"
 read -p "Enter your address do you want to create : " loopnumber
 if ! [[ "$loopnumber" =~ ^[0-9]+$ ]] || [[ $loopnumber -eq 0 ]] ;
  then exec >&2; echo "error: Not a number"; exit 1
