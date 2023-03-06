@@ -1,9 +1,13 @@
-Snapshot 
+#### Nolus Snapshot 
 
-height: 1244911
-size: 2.19G;
-pruning: custom/100/0/10;
-indexer: null
+##### height: 1244911
+
+##### size: 2.19G;
+
+##### pruning: custom/100/0/10;
+
+##### indexer: null
+
 ```
 # install dependencies, if needed
 sudo apt update
