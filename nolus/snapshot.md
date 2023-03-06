@@ -4,7 +4,7 @@ height: 1244911
 size: 2.19G;
 pruning: custom/100/0/10;
 indexer: null
-
+```
 # install dependencies, if needed
 sudo apt update
 sudo apt install lz4 -y
@@ -22,3 +22,4 @@ mv $HOME/.nolus/priv_validator_state.json.backup $HOME/.nolus/data/priv_validato
 sudo systemctl start nolusd
 # Show the nolusd log
 sudo journalctl -u nolusd -f --no-hostname -o cat
+```
